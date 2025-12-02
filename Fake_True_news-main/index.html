@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Fake News Detector</title>
+        <style>
+            body {
+                font-family: Arial;
+                background-color: #87c9ea;
+                text-align: center;
+                padding: 50px;
+            }
+
+            h1 {
+                color: #333;
+            }
+
+            textarea {
+                width: 60%;
+                height: 150px;
+                padding: 10px;
+                font-size: 16px;
+            }
+
+            button {
+                padding: 10px 20px;
+                font-size: 18px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+            }
+
+            button:hover {
+                background-color: #0056b3;
+            }
+
+            .result {
+                margin-top: 20px;
+                font-size: 20px;
+                font-weight: bold;
+                color: #222;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>📰 Fake News Detector</h1>
+        <form action="/predict" method="post">
+            <textarea name="text" rows="6" cols="50" placeholder="Enter news text here"></textarea>
+            <br><br>
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+        {% endif %}
+
+
+    </body>
+</html>
+
